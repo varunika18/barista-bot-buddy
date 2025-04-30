@@ -13,9 +13,10 @@ const Navbar = () => {
           <span className="text-xl font-bold text-coffee-dark">BaristaBot</span>
         </Link>
         <div className="hidden md:flex items-center space-x-8">
-          <a href="#features" className="text-coffee-dark hover:text-coffee-accent transition-colors">Features</a>
-          <a href="#benefits" className="text-coffee-dark hover:text-coffee-accent transition-colors">Benefits</a>
-          <a href="#testimonials" className="text-coffee-dark hover:text-coffee-accent transition-colors">Testimonials</a>
+          <Link to="/" className="text-coffee-dark hover:text-coffee-accent transition-colors">Home</Link>
+          <Link to="/about" className="text-coffee-dark hover:text-coffee-accent transition-colors">About</Link>
+          <a href="/#features" className="text-coffee-dark hover:text-coffee-accent transition-colors">Features</a>
+          <Link to="/contact" className="text-coffee-dark hover:text-coffee-accent transition-colors">Contact</Link>
           <Link to="/try-it-now" className="text-coffee-dark hover:text-coffee-accent transition-colors">Try It Now</Link>
         </div>
         <div className="flex items-center gap-4">

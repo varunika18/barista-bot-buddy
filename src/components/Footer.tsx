@@ -1,6 +1,9 @@
 
 import React from 'react';
-import { Coffee } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Twitter, Coffee } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   return (
@@ -16,43 +19,65 @@ const Footer = () => {
               Enhancing coffee shop operations and customer experiences through intelligent conversational AI.
             </p>
             <div className="flex space-x-4">
-              {['facebook', 'twitter', 'instagram', 'linkedin'].map((social) => (
+              {[
+                { icon: Facebook, href: "https://facebook.com" },
+                { icon: Twitter, href: "https://twitter.com" },
+                { icon: Instagram, href: "https://instagram.com" },
+                { icon: Linkedin, href: "https://linkedin.com" }
+              ].map((social, index) => (
                 <a 
-                  key={social}
-                  href={`#${social}`} 
+                  key={index}
+                  href={social.href} 
                   className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-coffee-accent hover:text-white transition-colors"
+                  target="_blank"
+                  rel="noreferrer"
                 >
-                  <span className="sr-only">{social}</span>
-                  <div className="w-4 h-4"></div>
+                  <social.icon className="h-4 w-4" />
                 </a>
               ))}
             </div>
           </div>
           
           <div>
-            <h3 className="font-semibold text-coffee-dark mb-4">Product</h3>
+            <h3 className="font-semibold text-coffee-dark mb-4">Navigation</h3>
             <ul className="space-y-2">
-              {['Features', 'Pricing', 'Case Studies', 'Reviews', 'Updates'].map((item) => (
-                <li key={item}>
-                  <a href={`#${item.toLowerCase()}`} className="text-gray-600 hover:text-coffee-accent">
-                    {item}
-                  </a>
+              {[
+                { name: 'Home', path: '/' },
+                { name: 'About Us', path: '/about' },
+                { name: 'Features', path: '/#features' },
+                { name: 'Try It Now', path: '/try-it-now' },
+                { name: 'Contact', path: '/contact' }
+              ].map((item) => (
+                <li key={item.name}>
+                  <Link to={item.path} className="text-gray-600 hover:text-coffee-accent">
+                    {item.name}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
           
           <div>
-            <h3 className="font-semibold text-coffee-dark mb-4">Company</h3>
-            <ul className="space-y-2">
-              {['About', 'Careers', 'Contact', 'Press', 'Partners'].map((item) => (
-                <li key={item}>
-                  <a href={`#${item.toLowerCase()}`} className="text-gray-600 hover:text-coffee-accent">
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <h3 className="font-semibold text-coffee-dark mb-4">Subscribe</h3>
+            <p className="text-gray-600 mb-4">Get the latest updates and news.</p>
+            <form className="flex flex-col space-y-2">
+              <div className="flex">
+                <Input 
+                  type="email" 
+                  placeholder="Your email"
+                  className="rounded-r-none focus:z-10"
+                />
+                <Button
+                  type="submit"
+                  className="rounded-l-none bg-coffee-accent hover:bg-coffee-accent/90"
+                >
+                  Subscribe
+                </Button>
+              </div>
+              <p className="text-xs text-gray-500">
+                By subscribing you agree to our Privacy Policy.
+              </p>
+            </form>
           </div>
         </div>
         
@@ -61,11 +86,15 @@ const Footer = () => {
             © {new Date().getFullYear()} BaristaBot Inc. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item) => (
-              <a key={item} href={`#${item.toLowerCase().replace(/\s+/g, '-')}`} className="text-gray-500 text-sm hover:text-coffee-accent">
-                {item}
-              </a>
-            ))}
+            <Link to="/privacy-policy" className="text-gray-500 text-sm hover:text-coffee-accent">
+              Privacy Policy
+            </Link>
+            <Link to="/terms-of-service" className="text-gray-500 text-sm hover:text-coffee-accent">
+              Terms of Service
+            </Link>
+            <Link to="/cookie-policy" className="text-gray-500 text-sm hover:text-coffee-accent">
+              Cookie Policy
+            </Link>
           </div>
         </div>
       </div>
