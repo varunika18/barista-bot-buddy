@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const CTA = () => {
   return (
@@ -16,12 +17,16 @@ const CTA = () => {
               Join hundreds of coffee shops already using BaristaBot to improve customer satisfaction and operational efficiency.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-coffee hover:bg-white/90 px-8">
-                Get Started
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                Book a Demo
-              </Button>
+              <Link to="/signup">
+                <Button size="lg" className="bg-white text-coffee hover:bg-white/90 px-8">
+                  Get Started
+                </Button>
+              </Link>
+              <Link to="/contact">
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                  Book a Demo
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

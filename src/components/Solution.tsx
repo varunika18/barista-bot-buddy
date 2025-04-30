@@ -11,6 +11,13 @@ const Solution = () => {
     "More time for baristas to focus on crafting perfect drinks"
   ];
 
+  const scrollToFeatures = () => {
+    const featuresSection = document.getElementById('features');
+    if (featuresSection) {
+      featuresSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="py-20 bg-gradient-to-b from-coffee-light to-white">
       <div className="container mx-auto px-4">
@@ -36,7 +43,10 @@ const Solution = () => {
           </ul>
           
           <div className="mt-8 flex justify-center">
-            <Button className="bg-coffee-accent hover:bg-coffee-accent/90 text-white">
+            <Button 
+              onClick={scrollToFeatures}
+              className="bg-coffee-accent hover:bg-coffee-accent/90 text-white"
+            >
               Learn How It Works
             </Button>
           </div>

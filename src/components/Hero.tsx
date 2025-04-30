@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { MessageSquare } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -22,12 +23,16 @@ const Hero = () => {
               Elevate your coffee shop experience with our AI-powered chatbot. Reduce wait times, answer customer questions instantly, and free your baristas to craft the perfect cup.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="bg-coffee-accent hover:bg-coffee-accent/90 text-white px-8">
-                Get Started
-              </Button>
-              <Button size="lg" variant="outline" className="border-coffee hover:bg-coffee/10">
-                Book a Demo
-              </Button>
+              <Link to="/signup">
+                <Button size="lg" className="bg-coffee-accent hover:bg-coffee-accent/90 text-white px-8">
+                  Get Started
+                </Button>
+              </Link>
+              <Link to="/contact">
+                <Button size="lg" variant="outline" className="border-coffee hover:bg-coffee/10">
+                  Book a Demo
+                </Button>
+              </Link>
             </div>
             <div className="flex items-center gap-4 text-sm text-gray-500">
               <div className="flex -space-x-2">
