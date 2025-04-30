@@ -2,7 +2,9 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import Features from '@/components/Features';
+import Problem from '@/components/Problem';
+import Solution from '@/components/Solution';
+import EnhancedFeatures from '@/components/EnhancedFeatures';
 import Benefits from '@/components/Benefits';
 import Testimonials from '@/components/Testimonials';
 import CTA from '@/components/CTA';
@@ -13,7 +15,9 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
-      <Features />
+      <Problem />
+      <Solution />
+      <EnhancedFeatures />
       <Benefits />
       <Testimonials />
       <CTA />

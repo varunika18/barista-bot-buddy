@@ -16,6 +16,7 @@ const Navbar = () => {
           <a href="#features" className="text-coffee-dark hover:text-coffee-accent transition-colors">Features</a>
           <a href="#benefits" className="text-coffee-dark hover:text-coffee-accent transition-colors">Benefits</a>
           <a href="#testimonials" className="text-coffee-dark hover:text-coffee-accent transition-colors">Testimonials</a>
+          <Link to="/try-it-now" className="text-coffee-dark hover:text-coffee-accent transition-colors">Try It Now</Link>
         </div>
         <div className="flex items-center gap-4">
           <Button variant="outline" className="hidden md:flex border-coffee-accent text-coffee-accent hover:bg-coffee-accent hover:text-white transition-all">
